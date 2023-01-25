@@ -1,4 +1,5 @@
 export default class RockPaperScissorsMove {
+	// enum emulation, since we're not allowed to use TypeScript
 	static Names = {
 		rock: Symbol("rock"),
 		paper: Symbol("paper"),
