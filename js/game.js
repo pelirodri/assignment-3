@@ -1,12 +1,12 @@
 import { getMoveFromName, generateRandomMove } from "./rock-paper-scissors/rock-paper-scissors.js";
 import MatchResult from "./rock-paper-scissors/MatchResult.js";
 
-function reportPartialResult(result) {
+function reportPartialResult(result, round) {
 	if (result !== MatchResult.draw) {
-		alert(`You ${result === MatchResult.victory ? "won!" : "lost:("}`);
+		alert(`Round ${round} result:\n\nYou ${result === MatchResult.victory ? "won!" : "lost:("}`);
 		console.log(`User ${result === MatchResult.victory ? "won" : "lost"}`);
 	} else {
-		alert("Match ended in a draw.");
+		alert(`Round ${round} ended in a draw.`);
 		console.log("Draw");
 	}
 }
@@ -60,7 +60,7 @@ function play(roundsCount) {
 	for (let round = 1; round <= roundsCount; round++) {
 		const result = playRoundAgainstComputer();
 
-		reportPartialResult(result);
+		reportPartialResult(result, round);
 		resultsHistory.push(result);
 	}
 
