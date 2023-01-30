@@ -50,5 +50,6 @@ function play(roundsCount) {
 }
 
 export function playForNumberOfRounds(roundsCount = 5) {
+	alert(`You’re about to play ${roundsCount} rounds of rock paper scissors!`);
 	reportFinalResults(play(roundsCount));
 }
