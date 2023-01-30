@@ -31,5 +31,7 @@ export function playRoundAgainstComputer() {
 		}
 	}
 
+	alert("Please enter a valid move");
+
 	playRoundAgainstComputer();
 }
