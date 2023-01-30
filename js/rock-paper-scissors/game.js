@@ -12,7 +12,7 @@ function reportPartialResult(result) {
 }
 
 function formatPluralizableWord(word, quantity) {
-	return `${word}${quantity > 1 ? "s" : ""}`;
+	return `${word}${quantity > 1 || quantity === 0 ? "s" : ""}`;
 }
 
 function reportFinalResults(results) {
