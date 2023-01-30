@@ -1,4 +1,4 @@
-import { playForNumberOfRounds } from "./rock-paper-scissors/game.js";
+import { playForNumberOfRounds } from "./game.js";
 
 function play() {
 	// Pass an argument with the number of rounds; defaults to 5

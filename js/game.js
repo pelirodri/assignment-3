@@ -1,5 +1,5 @@
-import { playRoundAgainstComputer } from "./rock-paper-scissors.js";
-import MatchResult from "./MatchResult.js";
+import { getMoveFromName, generateRandomMove } from "./rock-paper-scissors/rock-paper-scissors.js";
+import MatchResult from "./rock-paper-scissors/MatchResult.js";
 
 function reportPartialResult(result) {
 	if (result !== MatchResult.draw) {
@@ -35,6 +35,24 @@ function reportFinalResults(results) {
 
 	console.log(`Game ended in ${overallResult === MatchResult.draw ? "a " : ""}${overallResult.description}`);
 }
+
+function playRoundAgainstComputer() {
+	const userInput = prompt("Choose your move from rock, paper, or scissors");
+
+	if (userInput && userInput.length > 0) {
+		try {
+			const userMove = getMoveFromName(userInput.trim().toLowerCase());
+			return userMove.checkResultAgainst(generateRandomMove());
+		} catch {
+			console.error("Invalid move detected");
+		}
+	}
+
+	alert("Please enter a valid move");
+
+	playRoundAgainstComputer();
+}
+
 
 function play(roundsCount) {
 	const resultsHistory = [];
